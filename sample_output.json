@@ -1,0 +1,159 @@
+{
+    "community": "FreifunkEmskirchen",
+    "website": "http://www.freifunk-emskirchen.de",
+    "communityfile": "https://raw.githubusercontent.com/ffansbach/community-files/master/emskirchen.json",
+    "nodes ": [
+        {
+            "id": "1",
+            "name": "LesBar",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=1",
+            "status": {
+                "state": "online",
+                "clients": 0,
+                "lastcontact": 1416478205
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.550402908474",
+                "long": "10.713145953477"
+            }
+        },
+        {
+            "id": "2",
+            "name": "Sparkassenplatz8-2",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=2",
+            "status": {
+                "state": "online",
+                "clients": 0,
+                "lastcontact": 1416478208
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.549508860182",
+                "long": "10.717673572601"
+            }
+        },
+        {
+            "id": "3",
+            "name": "Sparkassenplatz8",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=3",
+            "status": {
+                "state": "online",
+                "clients": 1,
+                "lastcontact": 1416478212
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.549618120838",
+                "long": "10.717660398639"
+            }
+        },
+        {
+            "id": "4",
+            "name": "Rathaus",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=4",
+            "status": {
+                "state": "offline",
+                "clients": 0,
+                "lastcontact": 1415225416
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.551456733857",
+                "long": "10.718209074123"
+            }
+        },
+        {
+            "id": "5",
+            "name": "Antalya-Grill",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=5",
+            "status": {
+                "state": "online",
+                "clients": 0,
+                "lastcontact": 1416478238
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.550357196603",
+                "long": "10.718140276968"
+            }
+        },
+        {
+            "id": "6",
+            "name": "Emskirchen",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=6",
+            "status": {
+                "state": "online",
+                "clients": 0,
+                "lastcontact": 1416478241
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.549680871682",
+                "long": "10.717730143260"
+            }
+        },
+        {
+            "id": "7",
+            "name": "Cafe-Duenisch",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=7",
+            "status": {
+                "state": "online",
+                "clients": 1,
+                "lastcontact": 1416478245
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.550566881032",
+                "long": "10.718244890308"
+            }
+        },
+        {
+            "id": "8",
+            "name": "Emsk-Mini",
+            "href": "https://netmon.freifunk-emskirchen.de/router.php?router_id=8",
+            "status": {
+                "state": "offline",
+                "clients": 0,
+                "lastcontact": 1416336669
+            },
+            "user": {
+                "id": "2",
+                "name": "StilgarBF",
+                "href": "https://netmon.freifunk-emskirchen.de/user.php?user_id=2"
+            },
+            "geo": {
+                "lat": "49.549606953551",
+                "long": "10.717805884871"
+            }
+        }
+    ]
+}
