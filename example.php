@@ -28,13 +28,14 @@ try
 		$node->setHref('https://netmon.freifunk-emskirchen.de/router.php?router_id='.$resultNode['id']);
 
 		$node->setStatus(
-			$resultNode['status'],
+			($resultNode['status'] == 'online'),
 			$resultNode['client_count'],
 			$resultNode['last_seen']
 		);
 
 		// optional
-		$node->setUser(
+		$node->setUserId($resultNode['u_id']);
+		$nodeList->addPerson(
 			$resultNode['u_id'],
 			$resultNode['nickname'],
 			'https://netmon.freifunk-emskirchen.de/user.php?user_id='.$resultNode['u_id']
@@ -56,7 +57,6 @@ try
 		header('Expires: '.gmdate('D, d M Y H:i:s \G\M\T', time() + (60*15)));
 		header('Content-type: application/json');
 		echo json_encode($nodeList->getList(), JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-
 	}
 	catch (Exception $e)
 	{

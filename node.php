@@ -111,13 +111,21 @@ class node
 	 * @param int $clients
 	 * @param int $lastcontact
 	 */
-	public function setStatus($status, $clients, $lastcontact)
+	public function setStatus($status, $clients = false, $lastcontact = false)
 	{
 		$this->_status = array(
-			'state' => $status,
-			'clients' => (int)$clients,
-			'lastcontact' => (int)$lastcontact
+			'online' => (boolean)$status
 		);
+
+		if($clients !== false)
+		{
+			$this->_status['clients'] = (int)$clients;
+		}
+
+		if($lastcontact != false)
+		{
+			$this->_status['lastcontact'] = date('c', (int)$lastcontact);
+		}
 	}
 
 	/**
@@ -125,21 +133,9 @@ class node
 	 * @param string|boolean $name
 	 * @param string|boolean $href
 	 */
-	public function setUser($id, $name = false, $href = false)
+	public function setUserId($id)
 	{
-		$this->_user = array(
-			'id' => $id
-		);
-
-		if(!empty($name))
-		{
-			$this->_user['name'] = $name;
-		}
-
-		if(!empty($href))
-		{
-			$this->_user['href'] = $href;
-		}
+		$this->_user = $id;
 	}
 
 	/**
@@ -176,6 +172,11 @@ class node
 			'name' => $this->_name
 		);
 
+		if(!empty($this->_type))
+		{
+			$node['node_type'] = $this->_type;
+		}
+
 		if(!empty($this->_href))
 		{
 			$node['href'] = $this->_href;
@@ -188,12 +189,17 @@ class node
 
 		if(!empty($this->_user))
 		{
-			$node['user'] = $this->_user;
+			$node['links'] = array(
+				'admin-c' => array(
+					'type'	=> 'people',
+					'id'	=> $this->_user
+				)
+			);
 		}
 
 		if(!empty($this->_geo))
 		{
-			$node['geo'] = $this->_geo;
+			$node['location'] = $this->_geo;
 		}
 
 		return $node;

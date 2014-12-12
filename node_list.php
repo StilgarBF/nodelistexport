@@ -5,6 +5,13 @@
 class nodeList
 {
 	/**
+	 * version for json
+	 *
+	 * @var string
+	 */
+	private $_version = '1.0.0';
+
+	/**
 	 * Human readable name for this community
 	 *
 	 * @var string
@@ -31,6 +38,13 @@ class nodeList
 	 * @var array
 	 */
 	private $_nodeList = array();
+
+	/**
+	 * will contain all the admin-c
+	 *
+	 * @var array
+	 */
+	private $_peopleList = array();
 
 	/**
 	 * @param string
@@ -75,6 +89,15 @@ class nodeList
 		array_push($this->_nodeList, $node);
 	}
 
+	public function addPerson($id, $name, $href)
+	{
+		$this->_peopleList[$id] = array(
+			'id'	=> $id,
+			'name'	=> $name,
+			'href'	=> $href
+		);
+	}
+
 	/**
 	 * returns the data containing all nodes
 	 *
@@ -98,16 +121,24 @@ class nodeList
 		}
 
 		$list = array(
-			'community' => $this->_communityName,
-			'website' => $this->_website
+			'version' => $this->_version,
+			'updated_at' => date("c"),
+			'community' => array(
+				'name' => $this->_communityName
+			),
 		);
 
 		if(!empty($this->_communityFile))
 		{
-			$list['communityfile'] = $this->_communityFile;
+			$list['community']['href'] = $this->_communityFile;
 		}
 
 		$list['nodes '] = $this->_nodeList;
+
+		foreach($this->_peopleList as $person)
+		{
+			$list['linked '][] = $person;
+		}
 
 		return $list;
 	}
